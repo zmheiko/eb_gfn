@@ -12,7 +12,7 @@ import torch.nn.functional as F
 import torch.distributions as dists
 import torchvision
 
-from network import make_mlp
+from eb_gfn.network import make_mlp
 
 
 def get_GFlowNet(type, xdim, args, device, net=None):

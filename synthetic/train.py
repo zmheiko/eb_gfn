@@ -11,12 +11,12 @@ from tqdm import tqdm
 import argparse
 
 sys.path.append("/home/zhangdh/EB_GFN")
-from gflownet import get_GFlowNet
+from eb_gfn.gflownet import get_GFlowNet
 
 sys.path.append("/home/zhangdh/EB_GFN/synthetic")
-from synthetic_utils import plot_heat, plot_samples,\
+from eb_gfn.synthetic_utils import plot_heat, plot_samples,\
     float2bin, bin2float, get_binmap, get_true_samples, get_ebm_samples, EnergyModel
-from synthetic_data import inf_train_gen, OnlineToyDataset
+from eb_gfn.synthetic_data import inf_train_gen, OnlineToyDataset
 
 
 def makedirs(path):
