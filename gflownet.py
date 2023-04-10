@@ -148,7 +148,9 @@ class GFlowNet_Randf_TB:
         for _ in range(num):
             _, _, _, mle_loss, = tb_mle_randf_loss(lambda inp: torch.tensor(0.).to(self.device),
                                                      self, data.shape[0], back_ratio=1, data=data)
-            logpj = - mle_loss.detach().cpu() - torch.tensor(num).log()
+            # mle_loss = lop_pf --> so there should not be a minus sign 
+            # logpj = - mle_loss.detach().cpu() - torch.tensor(num).log()
+            logpj = mle_loss.detach().cpu() - torch.tensor(num).log()
             logp_ls.append(logpj.reshape(logpj.shape[0], -1))
 
         batch_logp = torch.logsumexp(torch.cat(logp_ls, dim=1), dim=1)  # (bs,)
