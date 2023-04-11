@@ -10,7 +10,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.distributions as dists
-import torchvision
 
 from eb_gfn.network import make_mlp
 
